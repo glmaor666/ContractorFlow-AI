@@ -14,6 +14,19 @@ Project managers often face:
 3. Agentic Workflow: Multi-agent orchestration (LangGraph) that separates data cleaning, SQL analysis, and trend visualization.
 4. Dynamic Visualization: A Vanilla JS frontend that generates custom dashboards on-demand via natural language prompts.
 
+#### Architecture Diagram
+```mermaid
+graph TD
+    A[Messy Excel Files] --> B[FastAPI Backend]
+    B --> C{AI Ingestion Agent}
+    C --> D[PostgreSQL - Structured Data]
+    C --> E[Vector DB - Unstructured Notes]
+    D --> F{Analysis Agent}
+    E --> F
+    F --> G[Vanilla JS Frontend]
+    G --> H[Dynamic Dashboards & Chat]
+```
+
 🛠️ The Tech Stack
 1. Backend: Python, FastAPI, LangGraph, Pandas.
 2. AI/LLM: OpenAI GPT-4o, RAG (Pinecone/ChromaDB).
